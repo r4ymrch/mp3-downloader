@@ -3,7 +3,6 @@
 # global var
 SCRIPT_PATH=$(readlink -f "$0")
 PROJECT_PATH=$(dirname "$SCRIPT_PATH")
-MUSIC_LISTS="$PROJECT_PATH/music_lists.txt"
 
 # TODO:folder output custom
 OUTPUT_DIR="$PROJECT_PATH/downloaded"
@@ -54,7 +53,7 @@ main() {
       ;;
     -b|--batch|batch)
       shift
-      local batch_file="${1:-$MUSIC_LISTS}"
+      local batch_file="$1"
 
       if [[ -f "$batch_file" ]]; then
         download -a "$batch_file"
