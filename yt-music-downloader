@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH=$(readlink -f "$0")
+PROJECT_PATH=$(dirname "$SCRIPT_PATH")
+MUSIC_LISTS="$PROJECT_PATH/music_lists.txt"
+
+OUTPUT_DIR="$PROJECT_PATH/downloaded"
+mkdir -p "$OUTPUT_DIR"
+
+show_help() {
+  echo "
+Usage: $(basename $SCRIPT_PATH) [OPTIONS]
+
+Options:
+  -l, --link [URL]          Download directly from URL
+  -b, --batch [FILE]        Batch download
+  -h, --help                Show this help message
+
+To use batch download, follow this instructions!
+  1. Create new file in this directory. name it whatever u want
+  2. Paste all download link to that file. only one link per line!
+  3. Run these command! 
+     '$(basename $SCRIPT_PATH) --batch [the file name you just created before]'
+  
+Example:
+$(basename $SCRIPT_PATH) --batch lists.txt
+  "
+}
+
+download() {
+  yt-dlp \
+    --extractor-args "youtube:player_client=android,web" \
+    --extract-audio \
+    --audio-format mp3 \
+    --audio-quality 0 \
+    --embed-thumbnail \
+    --add-metadata \
+    -o "$OUTPUT_DIR/%(title)s - %(artist,uploader)s.%(ext)s" \
+    "$@"
+}
+
+main() {
+  case "$1" in
+    -l|--link|link)
+      shift
+      if [[ -z "$1" ]]; then
+        echo "Error: URL cannot be empty!"
+        exit 1
+      fi
+      download "$@"
+      ;;
+    -b|--batch|batch)
+      shift
+      local batch_file="${1:-$MUSIC_LISTS}"
+
+      if [[ -f "$batch_file" ]]; then
+        download -a "$batch_file"
+      else
+        echo "Error: File '$batch_file' not found!"
+        echo "Try: $(basename "$SCRIPT_PATH") --help for more informations."
+        exit 1
+      fi
+      ;;
+    -h|--help|help)
+      show_help
+      exit 0
+      ;;
+    *)
+      show_help
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
