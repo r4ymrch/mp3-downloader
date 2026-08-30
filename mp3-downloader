@@ -4,7 +4,7 @@
 SCRIPT_PATH=$(readlink -f "$0")
 PROJECT_PATH=$(dirname "$SCRIPT_PATH")
 
-# TODO:folder output custom
+# TODO: folder output custom
 OUTPUT_DIR="$PROJECT_PATH/downloaded"
 mkdir -p "$OUTPUT_DIR"
 
