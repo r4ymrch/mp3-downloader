@@ -43,6 +43,11 @@ sudo xbps-install ffmpeg yt-dlp
 
 ## Installation
 
+```bash
+git clone https://github.com/r4ymrch/mp3-downloader.git
+cd mp3-downloader
+chmod +x ./mp3-downloader
+```
 
 ---
 
