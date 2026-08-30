@@ -12,6 +12,8 @@ show_help() {
   echo "
 Usage: $(basename $SCRIPT_PATH) [OPTIONS]
 
+Simple Tools/CLI Wrapper to downloade music/audio from YouTube
+
 Options:
   -l, --link [URL]          Download directly from URL
   -b, --batch [FILE]        Batch download
