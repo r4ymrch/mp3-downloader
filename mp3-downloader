@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
+# global var
 SCRIPT_PATH=$(readlink -f "$0")
 PROJECT_PATH=$(dirname "$SCRIPT_PATH")
 MUSIC_LISTS="$PROJECT_PATH/music_lists.txt"
 
+# TODO:folder output custom
 OUTPUT_DIR="$PROJECT_PATH/downloaded"
 mkdir -p "$OUTPUT_DIR"
 
@@ -28,6 +30,7 @@ $(basename $SCRIPT_PATH) --batch lists.txt
 }
 
 download() {
+  # TODO: opsi buat pake aria2 biar download kenceng 
   yt-dlp \
     --extractor-args "youtube:player_client=android,web" \
     --extract-audio \
