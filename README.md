@@ -27,16 +27,10 @@ sudo apt update
 sudo apt install ffmpeg yt-dlp -y
 ```
 
-### (Arch/Manjaro/EndeavourOS/CachyOS)
+### Arch/Manjaro/EndeavourOS/CachyOS
 ```bash
 sudo pacman -Syu
 sudo pacman -S ffmpeg yt-dlp
-```
-
-### (Void)
-```bash
-sudo xbps-install -Su
-sudo xbps-install ffmpeg yt-dlp
 ```
 
 ---
