@@ -21,7 +21,7 @@ Make sure your system (Linux / macOS / WSL) has the following dependencies insta
 2. **yt-dlp** (Latest version recommended)
 3. **ffmpeg** (Needed for audio, thumbnail, and metadata conversion)
 
-### Dependency Installation (Ubuntu/Debian/Mint/Pop!_OS)
+### Ubuntu/Debian/Mint/Pop!_OS
 ```bash
 sudo apt update
 sudo apt install ffmpeg yt-dlp -y
