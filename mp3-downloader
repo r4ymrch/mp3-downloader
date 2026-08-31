@@ -33,7 +33,6 @@ $(basename $SCRIPT_PATH) --batch lists.txt
 download() {
   # TODO: opsi buat pake aria2 biar download kenceng 
   yt-dlp \
-    --extractor-args "youtube:player_client=android,web" \
     --extract-audio \
     --audio-format mp3 \
     --audio-quality 0 \
