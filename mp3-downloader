@@ -38,6 +38,8 @@ download() {
     --audio-quality 0 \
     --embed-thumbnail \
     --add-metadata \
+    --downloader aria2c \
+    --downloader-args "aria2c:-x16 -s16 -k1M" \
     -o "$OUTPUT_DIR/%(title)s - %(artist,uploader)s.%(ext)s" \
     "$@"
 }
