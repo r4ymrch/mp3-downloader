@@ -12,7 +12,7 @@ show_help() {
   echo "
 Usage: $(basename $SCRIPT_PATH) [OPTIONS]
 
-Simple Tools/CLI Wrapper to downloade music/audio from YouTube
+Simple Tools/CLI Wrapper to download music/audio from YouTube
 
 Options:
   -l, --link [URL]          Download directly from URL
@@ -38,8 +38,8 @@ download() {
     --audio-quality 0 \
     --embed-thumbnail \
     --add-metadata \
-    --downloader aria2c \
-    --downloader-args "aria2c:-x16 -s16 -k1M" \
+    // --downloader aria2c \
+    // --downloader-args "aria2c:-x16 -s16 -k1M" \
     -o "$OUTPUT_DIR/%(title)s - %(artist,uploader)s.%(ext)s" \
     "$@"
 }
