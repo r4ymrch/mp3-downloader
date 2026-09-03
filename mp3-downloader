@@ -32,14 +32,14 @@ $(basename $SCRIPT_PATH) --batch lists.txt
 
 download() {
   # TODO: opsi buat pake aria2 biar download kenceng 
+  # --downloader aria2c \
+  # --downloader-args "aria2c:-x16 -s16 -k1M" \
   yt-dlp \
     --extract-audio \
     --audio-format mp3 \
     --audio-quality 0 \
     --embed-thumbnail \
     --add-metadata \
-    // --downloader aria2c \
-    // --downloader-args "aria2c:-x16 -s16 -k1M" \
     -o "$OUTPUT_DIR/%(title)s - %(artist,uploader)s.%(ext)s" \
     "$@"
 }
