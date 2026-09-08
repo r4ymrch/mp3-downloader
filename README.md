@@ -20,17 +20,18 @@ Make sure your system (Linux / macOS / WSL) has the following dependencies insta
 1. **Bash Shell**
 2. **yt-dlp** (Latest version recommended)
 3. **ffmpeg** (Needed for audio, thumbnail, and metadata conversion)
+4. **aria2** (Needed for fast file download)
 
 ### Ubuntu/Debian/Mint/Pop!_OS
 ```bash
 sudo apt update
-sudo apt install ffmpeg yt-dlp -y
+sudo apt install ffmpeg yt-dlp aria2 -y
 ```
 
 ### Arch/Manjaro/EndeavourOS/CachyOS
 ```bash
 sudo pacman -Syu
-sudo pacman -S ffmpeg yt-dlp
+sudo pacman -S ffmpeg yt-dlp aria2
 ```
 
 ---
