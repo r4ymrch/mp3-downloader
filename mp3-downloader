@@ -32,8 +32,6 @@ $(basename $SCRIPT_PATH) --batch lists.txt
 
 download() {
   # TODO: opsi buat pake aria2 biar download kenceng 
-  # --downloader aria2c \
-  # --downloader-args "aria2c:-x16 -s16 -k1M" \
   yt-dlp \
     --extract-audio \
     --audio-format mp3 \
